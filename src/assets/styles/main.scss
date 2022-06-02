@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import "default";
+@import "list";
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  @media screen and (min-width: 1000px) {
+    width: 1000px;
+    padding: 15px 0;
+  }
+}
+
+.chips {
+  display: flex;
+  gap: 5px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  span {
+    text-transform: uppercase;
+  }
+}
+
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.categories, .search {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 16px;
+  label {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    select, input {
+      width: 100%;
+      @media screen and (min-width: 640px) {
+        width: 260px;
+      }
+      border: 1px solid rgba(0, 0, 0, .25);
+      border-radius: 5px;
+      background-color: white;
+      font-size: 1rem;
+      padding: 10px 10px;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0;
+  justify-content: flex-end;
+  align-items: center;
+  .page-fl {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  a.page {
+    border: 1px solid #c6c6da;
+    padding: 5px 10px;
+    color: #333;
+    text-decoration: none;
+    &.current {
+      background-color: #eee;
+      font-weight: bold;
+    }
+  }
+}
