@@ -1,4 +1,4 @@
-# public-apis
+# vue-public-apis
 
 ## Project setup
 ```
