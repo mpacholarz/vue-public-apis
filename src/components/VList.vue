@@ -45,6 +45,8 @@ import VEntry from '@/components/VEntry.vue';
 import VPagination from '@/components/VPagination.vue';
 import VListStatus from '@/components/VListStatus.vue';
 
+import { DEFAULT_CATEGORY } from '@/constants/category';
+
 export default {
   name: 'VList',
   components: {
@@ -54,12 +56,12 @@ export default {
   },
   data() {
     return {
+      DEFAULT_CATEGORY,
       isPageLoading: true,
-      category: '',
+      category: DEFAULT_CATEGORY,
       search: '',
       currentPage: 0,
       perPage: 12,
-      DEFAULT_CATEGORY: 'all',
     };
   },
   computed: {
@@ -125,8 +127,6 @@ export default {
     },
   },
   created() {
-    this.category = this.DEFAULT_CATEGORY;
-
     Promise.all([
       this.$store.dispatch('apis/getAll'),
       this.$store.dispatch('categories/getAll'),
